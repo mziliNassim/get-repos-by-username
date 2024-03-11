@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Github Repositry By Username</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Get Github repo by username</h1>
+        <nav>
+          <a
+            href="https://www.instagram.com/mzili_com/"
+            title="instagram"
+            target="_blank"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a
+            href="https://github.com/mziliNassim"
+            target="_blank"
+            title="github"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/mzilinassim/"
+            target="_blank"
+            title="linkedin"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="left">
+          <div class="left-header">
+            <h2 class="left-header_username"></h2>
+          </div>
+          <div class="left-repos"></div>
+        </div>
+        <div class="right">
+          <form class="search-box">
+            <label for="search">Username</label>
+            <input
+              type="text"
+              class="search_input"
+              placeholder="Enter github username..."
+              value="Meta"
+              name="search"
+              autofocus
+            />
+            <input type="submit" name="submit" value="Search" />
+          </form>
+        </div>
+      </div>
+    </main>
+    <script src="./assets/main.js"></script>
+  </body>
+</html>
