@@ -174,9 +174,7 @@ main .right input[type="submit"] {
   font-size: 20px;
 }
 main .right input[type="submit"]:hover {
-  border-color: #6262f9;
-  background-color: transparent;
-  color: #6262f9;
+  opacity: 0.8;
 }
 /* media screen */
 @media screen and (max-width: 818px) {
