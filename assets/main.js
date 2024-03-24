@@ -10,8 +10,9 @@ form.addEventListener("submit", handelSearsh);
 // functions
 function handelSearsh(e) {
   e.preventDefault();
-  repoList.innerHTML = "";
   let userSearch = searchInput.value;
+  repoList.innerHTML = "";
+  usernameUI.innerHTML = "";
   if (userSearch) {
     getRepos(userSearch);
     searchInput.value = "";
@@ -19,6 +20,7 @@ function handelSearsh(e) {
 }
 
 function getRepos(user) {
+  repoList.innerHTML = `<div class="loding"></div>`;
   let url = `https://api.github.com/users/${user}/repos`;
   fetch(url)
     .then((res) => res.json())
@@ -26,12 +28,19 @@ function getRepos(user) {
       // console.log(Data);
       displayRepos(Data);
     })
-    .catch((error) => console.error(error));
+    .catch((error) => {
+      usernameUI.innerHTML = `
+        No github users with name : "<u>${user}</u>"
+      `;
+      repoList.innerHTML = "";
+      console.error("error : ", error);
+    });
 }
 
 function displayRepos(repos) {
   // console.log("repos[0].owner : ", repos[0].owner.login);
   usernameUI.innerHTML = `Github : <a href="${repos[0].owner.html_url}" target="_blanck" >${repos[0].owner.login}</a>`;
+  repoList.innerHTML = "";
   repos.map((repo) => {
     repoList.innerHTML += `
       <a href="${repo.html_url}" class="left-repos-repo">

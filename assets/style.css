@@ -50,21 +50,38 @@ main .container {
 }
 @media screen and (max-width: 818px) {
   .container {
-    padding: 0 20px;
-    gap: 10px;
     flex-direction: column-reverse;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0 20px;
   }
 }
 /* !Main - main left */
 main .left {
-  /* transition: height 0.5s; */
   border-radius: 5px;
   background: #fff;
   padding: 40px;
   width: 75%;
   height: 100%;
+}
+main .left .loding {
+  margin: 0 auto;
+  border: 8px solid #ccc;
+  border-top-color: #6262f9;
+  border-radius: 50%;
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  animation: retate 0.7s linear infinite;
+}
+@keyframes retate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 main .left-header {
   margin-bottom: 35px;
@@ -114,12 +131,12 @@ main .left-repos-repo .infos-repo_visibility {
   padding: 0 5px;
 }
 main .left-repos-repo .infos-repo_point {
-  width: 20px;
-  height: 20px;
-  padding: 0 10px;
   margin-right: 10px;
   border-radius: 50%;
   background: grey;
+  padding: 0 10px;
+  width: 20px;
+  height: 20px;
   font-weight: 600;
 }
 main .left-repos-repo .infos-repo_lang {
@@ -128,14 +145,14 @@ main .left-repos-repo .infos-repo_lang {
 main .left-repos-repo .status {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   justify-content: space-between;
+  gap: 20px;
   /* background: rebeccapurple; */
 }
 main .left-repos-repo .right-repo_star {
-  font-size: 20px;
-  font-weight: 700;
   color: #e3b341;
+  font-weight: 700;
+  font-size: 20px;
 }
 /* !Main - main right */
 main .right {
